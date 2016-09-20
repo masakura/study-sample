@@ -7,9 +7,23 @@
         <servlet-name>hello</servlet-name>
         <servlet-class>jp.masakura.study.HelloServlet</servlet-class>
     </servlet>
-    
+
+    <servlet>
+        <servlet-name>CGI</servlet-name>
+        <servlet-class>org.mortbay.servlet.CGI</servlet-class>
+        <init-param>
+            <param-name>commandPrefix</param-name>
+            <param-value>/bin/bash</param-value>
+        </init-param>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CGI</servlet-name>
+        <url-pattern>*.cgi</url-pattern>
     </servlet-mapping>
 </web-app>
