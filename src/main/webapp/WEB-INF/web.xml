@@ -17,6 +17,15 @@
         </init-param>
     </servlet>
 
+    <servlet>
+        <servlet-name>BAT</servlet-name>
+        <servlet-class>org.mortbay.servlet.CGI</servlet-class>
+        <init-param>
+            <param-name>commandPrefix</param-name>
+            <param-value>CMD.EXE /C</param-value>
+        </init-param>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/hello</url-pattern>
@@ -25,5 +34,10 @@
     <servlet-mapping>
         <servlet-name>CGI</servlet-name>
         <url-pattern>*.cgi</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>BAT</servlet-name>
+        <url-pattern>*.bat</url-pattern>
     </servlet-mapping>
 </web-app>
